@@ -7,6 +7,7 @@
 #include "curses.h"
 #include <ctype.h>
 #include "rogue.h"
+#include "chase.cpp"
 
 long e_levels[] = {
     10L,20L,40L,80L,160L,320L,640L,1280L,2560L,5120L,10240L,20480L,
@@ -17,12 +18,9 @@ long e_levels[] = {
  *	The player attacks the monster.
  */
 
-fight(mp, mn, weap, thrown)
+fight(coord mp,char mn,object *weap,bool thrown)
 {
-    coord *mp;
-    char mn;
-    struct object *weap;
-    bool thrown;
+
     register struct thing *tp;
     register struct linked_list *item;
     register bool did_hit = TRUE;
@@ -30,8 +28,8 @@ fight(mp, mn, weap, thrown)
     /*
      * Find the monster we want to fight
      */
-    if ((item = find_mons(mp->y, mp->x)) == NULL)
-	debug("Fight what @ %d,%d", mp->y, mp->x);
+    if ((item = find_mons(mp.y, mp.x)) == NULL)
+	debug("Fight what @ %d,%d", mp.y, mp..x);
     tp = (struct thing *) ldata(item);
     /*
      * Since we are fighting, things are not quiet so no healing takes

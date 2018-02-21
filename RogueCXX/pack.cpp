@@ -1,6 +1,110 @@
 #include "curses.h"
 #include <ctype.h>
 #include "rogue.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include "string.h"
+
+
+//YES
+
+/*
+ * detach:
+ *	Takes an item out of whatever linked list it might be in
+ */
+
+_detach(linked_list **list, linked_list *item)
+{
+    if (*list == item)
+	*list = next(item);
+    if (prev(item) != NULL) item->l_prev->l_next = next(item);
+    if (next(item) != NULL) item->l_next->l_prev = prev(item);
+    item->l_next = NULL;
+    item->l_prev = NULL;
+}
+
+/*
+ * _attach:
+ *	add an item to the head of a list
+ */
+
+_attach(linked_list **list,linked_list *item)
+{
+    if (*list != NULL)
+    {
+	item->l_next = *list;
+	(*list)->l_prev = item;
+	item->l_prev = NULL;
+    }
+    else
+    {
+	item->l_next = NULL;
+	item->l_prev = NULL;
+    }
+
+    *list = item;
+}
+
+/*
+ * discard:
+ *	free up an item
+ */
+
+discard(linked_list *item)
+{
+    total -= 2;
+    delete item->l_data;
+    delete item;
+}
+
+/*
+ * _free_list:
+ *	Throw the whole blamed thing away
+ */
+
+_free_list(linked_list **ptr)
+{
+    register struct linked_list *item;
+
+    while (*ptr != NULL)
+    {
+	item = *ptr;
+	*ptr = next(item);
+	discard(item);
+    }
+}
+
+/*
+ * new_item
+ *	get a new item with a specified size
+ */
+
+new_item(int size)
+{
+    register struct linked_list *item;
+
+    if ((item = (struct linked_list*) new(sizeof *item)) == NULL)
+	msg("Ran out of memory for header after %d items", total);
+    if ((item->l_data = new(size)) == NULL)
+	msg("Ran out of memory for data after %d items", total);
+    item->l_next = item->l_prev = NULL;
+    memset(item->l_data,0,size);
+    return;
+}
+
+new(int size)
+{
+    char *space = ALLOC(size);
+
+    if (space == NULL)
+    {
+	sprintf(prbuf, "Rogue ran out of memory (%d).  Fatal error!", sbrk(0));
+        fatal(prbuf);
+    }
+    total++;
+    return space;
+}
+
 
 /*
  * Routines to deal with the pack
@@ -13,22 +117,21 @@
  *	Pick up an object and add it to the pack.  If the argument is non-null
  * use it as the linked_list pointer instead of gettting it off the ground.
  */
-add_pack(item, silent)
-register struct linked_list *item;
-bool silent;
+add_pack(linked_list* item ,bool silent)
 {
+
     register struct linked_list *ip, *lp;
     register struct object *obj, *op;
     register bool exact, from_floor;
 
     if (item == NULL)
     {
-	from_floor = TRUE;
+	from_floor = true;
 	if ((item = find_obj(hero.y, hero.x)) == NULL)
-	    return;
+	    return *item;
     }
     else
-	from_floor = FALSE;
+	from_floor = false;
     obj = (struct object *) ldata(item);
     /*
      * Link it into the pack.  Search the pack for a object of similar type

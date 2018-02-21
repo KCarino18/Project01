@@ -8,14 +8,15 @@
 #include "curses.h"
 #include <stdlib.h>
 #include "rogue.h"
+#include <ctype.h>
+#include "pack.cpp"
 
 /*
  * detach:
  *	Takes an item out of whatever linked list it might be in
  */
 
-_detach(list, item)
-register struct linked_list **list, *item;
+_detach(linked_list **list, linked_list *item)
 {
     if (*list == item)
 	*list = next(item);
@@ -30,8 +31,7 @@ register struct linked_list **list, *item;
  *	add an item to the head of a list
  */
 
-_attach(list, item)
-register struct linked_list **list, *item;
+_attach(linked_list **list,linked_list *item)
 {
     if (*list != NULL)
     {
@@ -49,12 +49,23 @@ register struct linked_list **list, *item;
 }
 
 /*
+ * discard:
+ *	free up an item
+ */
+
+discard(linked_list *item)
+{
+    total -= 2;
+    FREE(item->l_data);
+    FREE(item);
+}
+
+/*
  * _free_list:
  *	Throw the whole blamed thing away
  */
 
-_free_list(ptr)
-register struct linked_list **ptr;
+_free_list(linked_list **ptr)
 {
     register struct linked_list *item;
 
@@ -67,26 +78,11 @@ register struct linked_list **ptr;
 }
 
 /*
- * discard:
- *	free up an item
- */
-
-discard(item)
-register struct linked_list *item;
-{
-    total -= 2;
-    FREE(item->l_data);
-    FREE(item);
-}
-
-/*
  * new_item
  *	get a new item with a specified size
  */
 
-struct linked_list *
-new_item(size)
-int size;
+new_item(int size)
 {
     register struct linked_list *item;
 

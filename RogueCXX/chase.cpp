@@ -264,10 +264,7 @@ register coord *cp;
  *	Find the monster from his corrdinates
  */
 
-struct linked_list *
 find_mons(y, x)
-register int y;
-int x;
 {
     register struct linked_list *item;
     register struct thing *th;

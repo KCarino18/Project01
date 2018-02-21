@@ -50,7 +50,7 @@
 #define pstats player.t_stats
 #define pack player.t_pack
 #define attach(a,b) _attach(&a,b)
-#define detach(a,b) _detach(&a,b)
+//#define detach(a,b) _detach(&a,b)
 #define free_list(a) _free_list(&a)
 #ifndef max
 #define max(a, b) ((a) > (b) ? (a) : (b))
@@ -60,7 +60,7 @@
 #undef  CTRL
 #define CTRL(ch) (ch & 037)
 #define ALLOC(x) malloc((unsigned int) x)
-#define FREE(x) free((char *) x)
+//#define FREE(x) free((char *) x)
 #define	EQSTR(a, b, c)	(strncmp(a, b, c) == 0)
 #define GOLDCALC (rnd(50 + 10 * level) + 2)
 #define ISRING(h,r) (cur_ring[h] != NULL && cur_ring[h]->o_which == r)
