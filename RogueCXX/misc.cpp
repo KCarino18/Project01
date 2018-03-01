@@ -12,27 +12,30 @@
  * tr_name:
  *	print the name of a trap
  */
-
-char *
-tr_name(ch)
-char ch;
+ char tr_name(int ch)
 {
-    register char *s;
+    char s;
 
     switch (ch)
     {
 	case TRAPDOOR:
 	    s = terse ? "A trapdoor." : "You found a trapdoor.";
-	when BEARTRAP:
+	    break;
+	case BEARTRAP:
 	    s = terse ? "A beartrap." : "You found a beartrap.";
-	when SLEEPTRAP:
+	    break;
+	case SLEEPTRAP:
 	    s = terse ? "A sleeping gas trap.":"You found a sleeping gas trap.";
-	when ARROWTRAP:
+	    break;
+	case ARROWTRAP:
 	    s = terse ? "An arrow trap." : "You found an arrow trap.";
-	when TELTRAP:
+	    break;
+	case TELTRAP:
 	    s = terse ? "A teleport trap." : "You found a teleport trap.";
-	when DARTTRAP:
+	    break;
+	case DARTTRAP:
 	    s = terse ? "A dart trap." : "You found a poison dart trap.";
+	    break;
     }
     return s;
 }
@@ -42,8 +45,7 @@ char ch;
  *	A quick glance all around the player
  */
 
-look(wakeup)
-bool wakeup;
+look(bool wakeup)
 {
     register int x, y;
     register char ch;

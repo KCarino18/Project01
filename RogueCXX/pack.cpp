@@ -1,19 +1,50 @@
-#include "curses.h"
-#include <ctype.h>
-#include "rogue.h"
 #include <unistd.h>
 #include <stdlib.h>
 #include "string.h"
+#define WINVER 0x0502
+#define _WIN32_WINNT 0x0502
+#include <windows.h>
+#include "curses.h"
+#include "rogue.h"
+#include <ctype.h>
+#include "misc.cpp"
 
 
 //YES
 
+
+find_obj(int y, int x)
+{
+    THING *obj;
+
+    for (obj = lvl_obj; obj != NULL; obj = next(obj))
+    {
+	if (obj->o_pos.y == y && obj->o_pos.x == x)
+		return obj;
+    }
+/*
+ * new_item
+ *	get a new item with a specified size
+ */
+
+new_item(int size)
+{
+    register struct linked_list *item;
+
+    if ( (sizeof *item) == NULL)
+	msg("Ran out of memory for header after %d items", total);
+    if (item->l_data == NULL)
+	msg("Ran out of memory for data after %d items", total);
+    item->l_next = item->l_prev = NULL;
+    memset(item->l_data,0,size);
+    return size;
+}
 /*
  * detach:
  *	Takes an item out of whatever linked list it might be in
  */
 
-_detach(linked_list **list, linked_list *item)
+detach(linked_list **list, linked_list *item)
 {
     if (*list == item)
 	*list = next(item);
@@ -74,25 +105,9 @@ _free_list(linked_list **ptr)
     }
 }
 
-/*
- * new_item
- *	get a new item with a specified size
- */
 
-new_item(int size)
-{
-    register struct linked_list *item;
 
-    if ((item = (struct linked_list*) new(sizeof *item)) == NULL)
-	msg("Ran out of memory for header after %d items", total);
-    if ((item->l_data = new(size)) == NULL)
-	msg("Ran out of memory for data after %d items", total);
-    item->l_next = item->l_prev = NULL;
-    memset(item->l_data,0,size);
-    return;
-}
-
-new(int size)
+/*new(int size)
 {
     char *space = ALLOC(size);
 
@@ -103,7 +118,7 @@ new(int size)
     }
     total++;
     return space;
-}
+}*/
 
 
 /*

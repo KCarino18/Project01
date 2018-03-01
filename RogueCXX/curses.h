@@ -1113,7 +1113,7 @@ extern int      in_wch(), mvin_wch(), mvwin_wch(), win_wch();
 #define	mvin_wchnstr(y,x,str,n)	mvwin_wchnstr(stdscr,y,x,str,n)
 #define	mvin_wchstr(y,x,str)	mvwin_wchstr(stdscr,y,x,str)
 #define	mvinwstr(y,x,ws)	mvwinwstr(stdscr,y,x,ws)
-#define	mvwaddch(win,y,x,ch)	(wmove(win,y,x)==ERR?ERR:waddch(win,ch))
+//#define	mvwaddch(win,y,x,ch)	(wmove(win,y,x)==ERR?ERR:waddch(win,ch))
 #define	mvwaddnstr(win,y,x,s,n)	(wmove(win,y,x)==ERR?ERR:waddnstr(win,s,n))
 #define	mvwaddstr(win,y,x,str)	(wmove(win,y,x)==ERR?ERR:waddstr(win,str))
 #define	mvwdelch(win,y,x)	(wmove(win,y,x)==ERR?ERR:wdelch(win))
@@ -1123,7 +1123,7 @@ extern int      in_wch(), mvin_wch(), mvwin_wch(), win_wch();
 #define	mvwgetstr(win,y,x,str)	(wmove(win,y,x)==ERR?ERR:wgetstr(win,str))
 #define	mvwgetnstr(win,y,x,str,n)\
 	(wmove(win,y,x)==ERR?ERR:wgetnstr(win,str,n))
-#define	mvwinch(win,y,x)	(wmove(win,y,x)==ERR?(chtype) ERR:winch(win))
+//#define	mvwinch(win,y,x)	(wmove(win,y,x)==ERR?(chtype) ERR:winch(win))
 #define	mvwinsch(win,y,x,c)	(wmove(win,y,x)==ERR?ERR:winsch(win,c))
 #define	mvwinsnstr(win,y,x,s,n)	(wmove(win,y,x)==ERR?ERR:winsnstr(win,s,n))
 #define	mvwinsstr(win,y,x,s)	(wmove(win,y,x)==ERR?ERR:winsstr(win,s))
@@ -1824,7 +1824,7 @@ typedef struct screen	SCREEN;
 /*
  * mv functions
  */
-#define	mvwaddch(win,y,x,ch)	(wmove(win,y,x)==ERR?ERR:waddch(win,ch))
+//#define	mvwaddch(win,y,x,ch)	(wmove(win,y,x)==ERR?ERR:waddch(win,ch))
 #define	mvwgetch(win,y,x)	(wmove(win,y,x)==ERR?ERR:wgetch(win))
 #define	mvwaddstr(win,y,x,str)	(wmove(win,y,x)==ERR?ERR:waddstr(win,str))
 #define	mvwgetstr(win,y,x,str)	(wmove(win,y,x)==ERR?ERR:wgetstr(win,str))
