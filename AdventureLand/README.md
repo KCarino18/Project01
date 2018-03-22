@@ -34,3 +34,8 @@ copystring() - copies the name of item
 comparestring()
 
 check_logics()
+
+
+ThrowingWeapon - class added
+	This class helps to take care of the weapon that you use to defeat the dragon during the game.
+(Had to add the header file into the main file because for some reason, it did not compile on my computer)
