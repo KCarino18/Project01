@@ -1,0 +1,1 @@
+Card Class with 3 different ways to create the class
