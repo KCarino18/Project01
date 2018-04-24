@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1521684947 source:c:\users\kcari\onedrive\desktop\codeblocksv2\adventureland\advland.h
+	"main.cpp"
+
+1521745850 c:\users\kcari\onedrive\desktop\codeblocksv2\adventureland\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<ctype.h>
+	"ADVLAND.h"
+
+1521684947 c:\users\kcari\onedrive\desktop\codeblocksv2\adventureland\advland.h
+	"main.cpp"
+
+1524613057 source:c:\users\kcari\onedrive\desktop\codeblocksv2\adventureland\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<ctype.h>
+	<cstdio>
+	<windows.h>
+	"Arrays.h"
+	"Functions.h"
+
+1524612858 c:\users\kcari\onedrive\desktop\codeblocksv2\adventureland\arrays.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<ctype.h>
+	<cstdio>
+	<windows.h>
+
+1524613249 c:\users\kcari\onedrive\desktop\codeblocksv2\adventureland\functions.h
+

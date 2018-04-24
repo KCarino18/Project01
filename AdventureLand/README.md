@@ -31,11 +31,13 @@ length() - gets length of space
 
 copystring() - copies the name of item
 
-comparestring()
+comparestring() - Compares two different strings
 
-check_logics()
+check_logics() - Checks Boolean Value
 
+- Changes Log -
+1.0 - Able to Compile and function
+    - fixed clearscreen
 
-ThrowingWeapon - class added
-	This class helps to take care of the weapon that you use to defeat the dragon during the game.
-(Had to add the header file into the main file because for some reason, it did not compile on my computer)
+1.1 - Replaced all printf with cout and made changes to make the strings and variables work
+    - Added AXE class that gives the axe its own class to judge whether the player has the axe in hand to kill the dragon
