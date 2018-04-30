@@ -41,3 +41,9 @@ check_logics() - Checks Boolean Value
 
 1.1 - Replaced all printf with cout and made changes to make the strings and variables work
     - Added AXE class that gives the axe its own class to judge whether the player has the axe in hand to kill the dragon
+
+1.2 - Implemented a Player Class
+
+1.3 - Implemented Treasure Classes
+
+1.4 - Made some of the older functions take in the Player Class upon usage

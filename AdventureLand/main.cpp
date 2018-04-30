@@ -45,12 +45,17 @@ private:
 //---------------------
 int main()
 {
+
+  player you;
   int i;        /* counting variable */
   FILE *fd;     /* load file handle */
 
-  for (i=0;i<IL;i++) IA[i]=I2[i];       /* reset object locations */
-  loadflag = 1;
-  endflag = 0;
+  for (i=0;i<IL;i++)
+  {
+    IA[i]=I2[i];       /* reset object locations */
+  }
+  bool loadflag = 1;
+  bool endflag = 0;
   srand(time(NULL));  /* randomize */
   welcome();
 
@@ -84,12 +89,12 @@ int main()
 	ClearScreen();
 	look();
 	NV[0] = 0;
-	turn();
+	turn(you);
       }
     }
     if (!get_input())
     {
-      turn();
+      turn(you);
       if (!loadflag && !endflag)
       {
 	if (IA[9] == -1)
@@ -103,7 +108,7 @@ int main()
 	  else if (lx < 25) cout << "light runs out in " << lx << " turns!";
 	}
 	NV[0] = 0;
-	turn();
+	turn(you);
       }
     }
   }
