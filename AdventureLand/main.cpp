@@ -16,37 +16,25 @@
 #include <ctype.h>
 #include <cstdio>
 #include <windows.h>
+#include <vector>
 
 using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
+using std::vector;
+
 
 
 #include "Arrays.h"
 #include "Functions.h"
 
-class throwingWeapon // going to be the axe that you throw at the dragon.
-{
-public:
-    throwingWeapon();
-    setWeapons(bool x)
-    {
-        weapon = x;
-    }
-    getWeapons()
-    {
-        return weapon;
-    }
-
-private:
-    bool weapon = 0;
-};
 //---------------------
 int main()
 {
-
+  srand(time(NULL));  /* randomize */
   player you;
+  you.nameSetup();
   int i;        /* counting variable */
   FILE *fd;     /* load file handle */
 
@@ -56,9 +44,8 @@ int main()
   }
   bool loadflag = 1;
   bool endflag = 0;
-  srand(time(NULL));  /* randomize */
-  welcome();
 
+  welcome();
   while (!endflag)
   {
     while (loadflag)
@@ -79,6 +66,7 @@ int main()
 	  lx = fgetwc(fd);
 	  df = fgetwc(fd);
 	  r = fgetwc(fd);
+	  //you.settreasures(you.howmany()) = fgetwc(fd);
 	  for (i=0;i<IL;i++) IA[i]=fgetwc(fd);
 	  fclose(fd);
 	}

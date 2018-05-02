@@ -1,384 +1,6 @@
 #ifndef FUNCTIONS_H_INCLUDED
 #define FUNCTIONS_H_INCLUDED
 
-class Ruby
-{
-public:
-    void pickupTreasure()
-    {
-        rubyz = 1;
-
-    }
-    void dropTreasure()
-    {
-        rubyz = 0;
-    }
-    void haveTreasure()
-    {
-        if (rubyz == 1)
-        {
-            cout << "\nYou currenty have the Pot Of Rubies.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Pot Of Rubies.\n";
-        }
-    }
-    bool haveit()
-    {
-        return rubyz;
-    }
-private:
-    bool rubyz = 0;
-};
-class GoldenFish
-{
-public:
-    void pickupTreasure()
-    {
-        goldFish = 1;
-    }
-    void dropTreasure()
-    {
-        goldFish = 0;
-    }
-    void haveTreasure()
-    {
-        if(goldFish==1)
-        {
-            cout << "\nYou currenty have the Golden Fish.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Golden Fish.\n";
-        }
-    }
-    bool haveit()
-    {
-        return goldFish;
-    }
-private:
-    bool goldFish= 0;
-};
-class GoldenNet
-{
-public:
-    void pickupTreasure()
-    {
-        goldNet = 1;
-    }
-    void dropTreasure()
-    {
-        goldNet = 0;
-    }
-    void haveTreasure()
-    {
-        if(goldNet==1)
-        {
-            cout << "\nYou currenty have the Golden Net.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Golden Net.\n";
-        }
-    }
-    bool haveit()
-    {
-        return goldNet;
-    }
-private:
-    bool goldNet= 0;
-};
-class RoyalHoney
-{
-public:
-    void pickupTreasure()
-    {
-        honey = 1;
-    }
-    void dropTreasure()
-    {
-        honey = 0;
-    }
-    void haveTreasure()
-    {
-        if(honey==1)
-        {
-            cout << "\nYou currenty have the Royal Honey.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Royal Honey.\n";
-        }
-    }
-    bool haveit()
-    {
-        return honey;
-    }
-private:
-    bool honey= 0;
-};
-class Rug
-{
-public:
-    void pickupTreasure()
-    {
-        rugg = 1;
-    }
-    void dropTreasure()
-    {
-        rugg = 0;
-    }
-    void haveTreasure()
-    {
-        if(rugg==1)
-        {
-            cout << "\nYou currenty have the Thick Persian Rug.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Thick Persian Rug.\n";
-        }
-    }
-    bool haveit()
-    {
-        return rugg;
-    }
-private:
-    bool rugg= 0;
-};
-class Crown
-{
-public:
-    void pickupTreasure()
-    {
-        crownz = 1;
-    }
-    void dropTreasure()
-    {
-        crownz = 0;
-    }
-    void haveTreasure()
-    {
-        if(crownz==1)
-        {
-            cout << "\nYou currenty have the Gold Crown.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Gold Crown.\n";
-        }
-    }
-    bool haveit()
-    {
-        return crownz;
-    }
-private:
-    bool crownz= 0;
-};
-class Mirror
-{
-public:
-    void pickupTreasure()
-    {
-        magMirr = 1;
-    }
-    void dropTreasure()
-    {
-        magMirr = 0;
-    }
-    void haveTreasure()
-    {
-        if(magMirr==1)
-        {
-            cout << "\nYou currenty have the Magic Mirror.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Magic Mirror.\n";
-        }
-    }
-    bool haveit()
-    {
-        return magMirr;
-    }
-private:
-    bool magMirr= 0;
-};
-class Eggs
-{
-public:
-    void pickupTreasure()
-    {
-        dragEggs = 1;
-    }
-    void dropTreasure()
-    {
-        dragEggs = 0;
-    }
-    void haveTreasure()
-    {
-        if(dragEggs==1)
-        {
-            cout << "\nYou currenty have the Dragon Eggs.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Dragon Eggs.\n";
-        }
-    }
-    bool haveit()
-    {
-        return dragEggs;
-    }
-private:
-    bool dragEggs= 0;
-};
-class Froot
-{
-public:
-    void pickupTreasure()
-    {
-        fruit = 1;
-    }
-    void dropTreasure()
-    {
-        fruit = 0;
-    }
-    void haveTreasure()
-    {
-        if(fruit==1)
-        {
-            cout << "\nYou currenty have the Jeweled Fruit.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Jeweled Fruit.\n";
-        }
-    }
-    bool haveit()
-    {
-        return fruit;
-    }
-private:
-    bool fruit= 0;
-};
-class Ox
-{
-public:
-    void pickupTreasure()
-    {
-        blueOx = 1;
-    }
-    void dropTreasure()
-    {
-        blueOx = 0;
-    }
-    void haveTreasure()
-    {
-        if(blueOx==1)
-        {
-            cout << "\nYou currenty have the Small Statue of the Blue Ox.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Small Statue of the Blue Ox.\n";
-        }
-    }
-    bool haveit()
-    {
-        return blueOx;
-    }
-private:
-    bool blueOx= 0;
-};
-class Firestone
-{
-public:
-    void pickupTreasure()
-    {
-        stone = 1;
-    }
-    void dropTreasure()
-    {
-        stone = 0;
-    }
-    void haveTreasure()
-    {
-        if(stone==1)
-        {
-            cout << "\nYou currenty have the Firestone.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Firestone.\n";
-        }
-    }
-    bool haveit()
-    {
-        return stone;
-    }
-private:
-    bool stone= 0;
-};
-class Ring
-{
-public:
-    void pickupTreasure()
-    {
-        diaring = 1;
-    }
-    void dropTreasure()
-    {
-        diaring = 0;
-    }
-    void haveTreasure()
-    {
-        if(diaring==1)
-        {
-            cout << "\nYou currenty have the Diamond Ring.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Diamond Ring.\n";
-        }
-    }
-    bool haveit()
-    {
-        return diaring;
-    }
-private:
-    bool diaring= 0;
-};
-class Bracelet
-{
-public:
-    void pickupTreasure()
-    {
-        brace = 1;
-    }
-    void dropTreasure()
-    {
-        brace = 0;
-    }
-    void haveTreasure()
-    {
-        if(brace==1)
-        {
-            cout << "\nYou currenty have the Diamond Bracelet.\n";
-        }
-        else
-        {
-            cout << "\nYou currenty do not have the Diamond Bracelet.\n";
-        }
-    }
-    bool haveit()
-    {
-        return brace;
-    }
-private:
-    bool brace = 0;
-};
 
 class ThrowingWeapons
 {
@@ -389,7 +11,7 @@ public:
         {
             return 1;
         }
-        else return 0;
+       else return 0;
     }
     bool pickUp()
     {
@@ -408,86 +30,92 @@ public:
 private:
     bool axe = 0;
 };
+
+class Treasure : ThrowingWeapons
+{
+public:
+    void pickupTreasure()
+    {
+        treasure = 1;
+
+    }
+    void dropTreasure()
+    {
+        treasure = 0;
+    }
+    void haveTreasure()
+    {
+        if (treasure == 1)
+        {
+            cout << "\nYou currenty have the " << TreasureNames[nameOfTreasure];
+        }
+        else
+        {
+            cout << "\nYou currenty do not have the " << TreasureNames[nameOfTreasure];
+        }
+    }
+    bool treasures()
+    {
+        if(treasure)
+        {
+            return 1;
+        }
+        else
+            return 0;
+    }
+    void setName(int x)
+    {
+        nameOfTreasure = x;
+    }
+private:
+    bool treasure = 0;
+    string TreasureNames[14] = {"Pot of Rubies.\n","Golden Fish.\n","Golden Net.\n","Royal Honey.\n",
+                                   "Thick Persian Rug.\n","Gold Crown.\n","Magic Mirror.\n","Dragon Eggs.\n",
+                                   "Jeweled Fruit.\n","Blue Ox.\n","Firestone.\n","Diamond Ring.\n","Diamond Bracelet.\n","Axe.\n"};
+    int nameOfTreasure = 0;
+};
+
 class player
 {
 public:
-    ThrowingWeapons axes;
-    Ruby rubies;
-    GoldenFish feesh;
-    GoldenNet net;
-    RoyalHoney honey;
-    Rug persian;
-    Crown goldCrown;
-    Mirror mirrors;
-    Eggs dragon;
-    Froot fruit;
-    Ox blue;
-    Firestone stone;
-    Ring diamondRing;
-    Bracelet diamondBracelet;
+    ThrowingWeapons axe;
+    int settreasures(int x)
+    {
+        totalTreasures = x;
+    }
     int howmany()
     {
-        int yuppers = 0;
-        if (rubies.haveit())
+        int yuppers;
+        for(int i=0; i<13;i++)
         {
+            if (allTreasures[i].treasures())
             yuppers++;
         }
-        if(feesh.haveit())
-        {
-            yuppers++;
-        }
-        if(net.haveit())
-        {
-            yuppers++;
-        }
-        if(honey.haveit())
-        {
-            yuppers++;
-        }
-        if(persian.haveit())
-        {
-            yuppers++;
-        }
-        if(goldCrown.haveit())
-        {
-            yuppers++;
-        }
-        if(mirrors.haveit())
-        {
-            yuppers++;
-        }
-        if(dragon.haveit())
-        {
-            yuppers++;
-        }
-        if(fruit.haveit())
-        {
-            yuppers++;
-        }
-        if(blue.haveit())
-        {
-            yuppers++;
-        }
-        if(stone.haveit())
-        {
-            yuppers++;
-        }
-        if(diamondRing.haveit())
-        {
-            yuppers++;
-        }
-        if(diamondBracelet.haveit())
-        {
-            yuppers++;
-        }
-
         return yuppers;
     }
+    void nameSetup()
+    {
+    rubies.setName(0);
+    fish.setName(1);
+    net.setName(2);
+    honey.setName(3);
+    rug.setName(4);
+    crown.setName(5);
+    mirror.setName(6);
+    eggs.setName(7);
+    fruit.setName(8);
+    ox.setName(9);
+    firestone.setName(10);
+    ring.setName(11);
+    bracelet.setName(12);
+    }
+    vector<Treasure> allTreasures{rubies,fish,net,honey,rug,crown,mirror,eggs,fruit,ox,firestone,ring,bracelet};
+
 private:
     int totalTreasures = 0;
+    Treasure rubies,fish,net,honey,rug,crown,mirror,eggs,fruit,ox,firestone,ring,bracelet;
 
 };
-
 signed int yes_no(void);
 void empty_keyboardbuffer(void);
 void welcome(void);
@@ -863,58 +491,7 @@ void action(int ac, int *ip, player you)
         cout << endl;
 
 	cout <<IAS[i];
-	if (IAS[i] == IAS[2])
-    {
-        you.rubies.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[8])
-    {
-        you.feesh.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[20])
-    {
-        you.net.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[24])
-    {
-        you.honey.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[30])
-    {
-        you.persian.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[38])
-    {
-        you.goldCrown.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[39])
-    {
-        you.mirrors.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[45])
-    {
-        you.dragon.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[47])
-    {
-        you.fruit.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[48])
-    {
-        you.blue.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[49])
-    {
-        you.diamondRing.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[50])
-    {
-        you.diamondBracelet.pickupTreasure();
-    }
-    else if (IAS[i] == IAS[57])
-    {
-        you.stone.pickupTreasure();
-    }
+	you.allTreasures[i].haveTreasure();
 
 	j = 0;
       }
@@ -939,6 +516,7 @@ void action(int ac, int *ip, player you)
       putc(lx,fd);
       putc(df,fd);
       putc(r,fd);
+      putc(you.howmany(),fd);
       for (i=0;i<IL;i++) putc(IA[i],fd);
       fclose(fd);
     }
@@ -1036,7 +614,8 @@ void carry_drop(player x)
 		      IA[j] = -1;
 		      k = 3;
 
-		      cout << "OK, \n";
+		      cout << "OK,\n";//PICKING UP
+		      x.allTreasures[j].pickupTreasure();
 		      j = IL;
 		    }
 		  }
@@ -1047,7 +626,8 @@ void carry_drop(player x)
 		    {
 		      IA[j] = r;
 		      k = 3;
-		      cout << "OK, \n";
+		      cout << "OK,\n";//DROPPING
+		      x.allTreasures[j].dropTreasure();
 		      j = IL;
 		    }
 		  }
