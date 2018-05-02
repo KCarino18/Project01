@@ -99,10 +99,10 @@ int main()
 	  fclose(fd);
 	  you.settreasures(save);
 	}
-	else loadflag = 1;      /* HERE WE GO AGAIN... */
-      }
-      if (!loadflag)
-      {
+
+	else
+    {
+    loadflag = 1;      /* HERE WE GO AGAIN... */
     assert(one = -1);
     assert(two = -1);
     assert(three = -1);
@@ -116,6 +116,11 @@ int main()
     assert(eleven = -1);
     assert(thirteen = -1);
     assert(twelve = -1);
+    }
+      }
+      if (!loadflag)
+      {
+
 	ClearScreen();
 	look();
 	NV[0] = 0;

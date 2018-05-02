@@ -154,7 +154,7 @@ char     IA[IL];                 /* object locations */
 int      NV[2];                  /* word numbers, NV[0] = first, NV[1] = second */
 int      loadflag, endflag;      /* should we load or end? */
 int      f,f3,f2;
-int      r, lx, df, sf, save, one = -1, two = -1, three = -1, four = -1, five = -1, six = -1, seven = -1, eight = -1, nine = -1, ten = -1, eleven = -1, twelve = -1, thirteen = -1;
+int      r, lx, df, sf, save, one = 20, two = 20, three = 20, four = 20, five = 20, six = 20, seven = 20, eight = 20, nine = 20, ten = 20, eleven = 20, twelve = 20, thirteen = 20;
 char     tps[80];                /* input string */
 int      x,y;
 
