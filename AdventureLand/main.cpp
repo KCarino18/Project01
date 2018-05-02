@@ -66,9 +66,10 @@ int main()
 	  lx = fgetwc(fd);
 	  df = fgetwc(fd);
 	  r = fgetwc(fd);
-	  //you.settreasures(you.howmany()) = fgetwc(fd);
+	  save = fgetwc(fd);
 	  for (i=0;i<IL;i++) IA[i]=fgetwc(fd);
 	  fclose(fd);
+	  you.settreasures(save);
 	}
 	else loadflag = 1;      /* HERE WE GO AGAIN... */
       }

@@ -5,7 +5,7 @@
 class ThrowingWeapons
 {
 public:
-    bool throws()
+    virtual bool throws()
     {
         if (axe)
         {
@@ -34,6 +34,14 @@ private:
 class Treasure : ThrowingWeapons
 {
 public:
+    bool throws()
+    {
+        if(treasure)
+        {
+            return 1;
+        }
+        else return 0;
+    }
     void pickupTreasure()
     {
         treasure = 1;
@@ -116,6 +124,10 @@ private:
     Treasure rubies,fish,net,honey,rug,crown,mirror,eggs,fruit,ox,firestone,ring,bracelet;
 
 };
+
+
+
+
 signed int yes_no(void);
 void empty_keyboardbuffer(void);
 void welcome(void);
@@ -137,8 +149,8 @@ char     IA[IL];                 /* object locations */
 int      NV[2];                  /* word numbers, NV[0] = first, NV[1] = second */
 int      loadflag, endflag;      /* should we load or end? */
 int      f,f3,f2;
-int      r, lx, df, sf;
-char   tps[80];                /* input string */
+int      r, lx, df, sf, save;
+char     tps[80];                /* input string */
 int      x,y;
 
 /* externals:
@@ -508,6 +520,7 @@ void action(int ac, int *ip, player you)
   if (ac == 70) ClearScreen();
   if (ac == 71)
   {
+    save = you.howmany();
     cout << "Is the current drive ready to receive the saved game? ";
     if (yes_no())
     {
@@ -516,7 +529,7 @@ void action(int ac, int *ip, player you)
       putc(lx,fd);
       putc(df,fd);
       putc(r,fd);
-      putc(you.howmany(),fd);
+      putc(save,fd);
       for (i=0;i<IL;i++) putc(IA[i],fd);
       fclose(fd);
     }
@@ -747,26 +760,6 @@ int check_logics(void)
     y++;
   } while ((y <= 5) && f2);
   return(f2);
-}
-// 1 = west. 2 = north/up. 3 = east. 4 = south/down. 5 = look, 6 = jump
-// 7 = swim, 8 = climb, 9 = throw, 10 = find, 11 = take, 12 = inventory, 13 = score
-int movement(int x)
-{
-    switch(getch()) {
-case 65: //up
-    x = 2;
-    break;
-case 66://down
-    x = 4;
-    break;
-case 67://right/east
-    x = 3;
-    break;
-case 68://left/west
-    x = 1;
-    break;
-}
-return x;
 }
 
 #endif // FUNCTIONS_H_INCLUDED

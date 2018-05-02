@@ -49,3 +49,5 @@ check_logics() - Checks Boolean Value
 1.4 - Made some of the older functions take in the Player Class upon usage
 
 1.5 - Made some changes to old classes and combined them into a vector of the classes to help reduce the amount of use.
+
+1.6 - Deleted unused functions
