@@ -17,6 +17,8 @@
 #include <cstdio>
 #include <windows.h>
 #include <vector>
+#include <assert.h>
+#include "assert.h"
 
 using std::cin;
 using std::cout;
@@ -101,12 +103,26 @@ int main()
       }
       if (!loadflag)
       {
+    assert(one = -1);
+    assert(two = -1);
+    assert(three = -1);
+    assert(four = -1);
+    assert(five = -1);
+    assert(six = -1);
+    assert(seven = -1);
+    assert(eight = -1);
+    assert(nine = -1);
+    assert(ten = -1);
+    assert(eleven = -1);
+    assert(thirteen = -1);
+    assert(twelve = -1);
 	ClearScreen();
 	look();
 	NV[0] = 0;
 	turn(you);
       }
     }
+
     if (!get_input())
     {
       turn(you);

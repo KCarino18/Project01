@@ -53,3 +53,5 @@ check_logics() - Checks Boolean Value
 1.6 - Deleted unused functions
 
 1.7 - Added function to save certain treasures
+
+1.7 - added a few asserts to help make the game more stable
