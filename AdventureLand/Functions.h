@@ -87,7 +87,7 @@ class player
 {
 public:
     ThrowingWeapons axe;
-    int settreasures(int x)
+    void settreasures(int x)
     {
         totalTreasures = x;
     }
@@ -124,7 +124,12 @@ private:
     Treasure rubies,fish,net,honey,rug,crown,mirror,eggs,fruit,ox,firestone,ring,bracelet;
 
 };
+player setCertainTreasures( player y, int x)
+    {
+        y.allTreasures[x].pickupTreasure();
+        return y;
 
+    }
 
 
 
@@ -149,7 +154,7 @@ char     IA[IL];                 /* object locations */
 int      NV[2];                  /* word numbers, NV[0] = first, NV[1] = second */
 int      loadflag, endflag;      /* should we load or end? */
 int      f,f3,f2;
-int      r, lx, df, sf, save;
+int      r, lx, df, sf, save, one = -1, two = -1, three = -1, four = -1, five = -1, six = -1, seven = -1, eight = -1, nine = -1, ten = -1, eleven = -1, twelve = -1, thirteen = -1;
 char     tps[80];                /* input string */
 int      x,y;
 
@@ -520,6 +525,7 @@ void action(int ac, int *ip, player you)
   if (ac == 70) ClearScreen();
   if (ac == 71)
   {
+    //fish,net,honey,rug,crown,mirror,eggs,fruit,ox,firestone,ring,bracelet
     save = you.howmany();
     cout << "Is the current drive ready to receive the saved game? ";
     if (yes_no())
@@ -530,6 +536,72 @@ void action(int ac, int *ip, player you)
       putc(df,fd);
       putc(r,fd);
       putc(save,fd);
+      if (you.allTreasures[0].treasures())
+      {
+          one = 0;
+          putc(one,fd);
+      }
+      else if (you.allTreasures[1].treasures())
+      {
+          two = 1;
+          putc(two,fd);
+      }
+      else if (you.allTreasures[2].treasures())
+      {
+          three = 2;
+          putc(three,fd);
+      }
+      else if (you.allTreasures[3].treasures())
+      {
+          four = 3;
+          putc(four,fd);
+      }
+      else if (you.allTreasures[4].treasures())
+      {
+          five = 4;
+          putc(five,fd);
+      }
+      else if (you.allTreasures[5].treasures())
+      {
+          six = 5;
+          putc(six,fd);
+      }
+      else if (you.allTreasures[6].treasures())
+      {
+          seven = 6;
+          putc(seven,fd);
+      }
+      else if (you.allTreasures[7].treasures())
+      {
+          eight = 7;
+          putc(eight,fd);
+      }
+      //fish,net,honey,rug,crown,mirror,eggs,fruit,ox,firestone,ring,bracelet
+      else if (you.allTreasures[8].treasures())
+      {
+          nine = 8;
+          putc(nine,fd);
+      }
+      else if (you.allTreasures[9].treasures())
+      {
+          ten = 9;
+          putc(ten,fd);
+      }
+      else if (you.allTreasures[10].treasures())
+      {
+          eleven = 10;
+          putc(eleven,fd);
+      }
+      else if (you.allTreasures[11].treasures())
+      {
+          twelve = 11;
+          putc(twelve,fd);
+      }
+      else if (you.allTreasures[12].treasures())
+      {
+          thirteen = 12;
+          putc(thirteen,fd);
+      }
       for (i=0;i<IL;i++) putc(IA[i],fd);
       fclose(fd);
     }
