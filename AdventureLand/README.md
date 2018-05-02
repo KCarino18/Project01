@@ -51,3 +51,5 @@ check_logics() - Checks Boolean Value
 1.5 - Made some changes to old classes and combined them into a vector of the classes to help reduce the amount of use.
 
 1.6 - Deleted unused functions
+
+1.7 - Added function to save certain treasures
