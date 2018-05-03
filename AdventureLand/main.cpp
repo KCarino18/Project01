@@ -103,19 +103,19 @@ int main()
 	else
     {
     loadflag = 1;      /* HERE WE GO AGAIN... */
-    assert(one = -1);
-    assert(two = -1);
-    assert(three = -1);
-    assert(four = -1);
-    assert(five = -1);
-    assert(six = -1);
-    assert(seven = -1);
-    assert(eight = -1);
-    assert(nine = -1);
-    assert(ten = -1);
-    assert(eleven = -1);
-    assert(thirteen = -1);
-    assert(twelve = -1);
+    assert(one = 20);
+    assert(two = 20);
+    assert(three = 20);
+    assert(four = 20);
+    assert(five = 20);
+    assert(six = 20);
+    assert(seven = 20);
+    assert(eight = 20);
+    assert(nine = 20);
+    assert(ten = 20);
+    assert(eleven = 20);
+    assert(thirteen = 20);
+    assert(twelve = 20);
     }
       }
       if (!loadflag)
